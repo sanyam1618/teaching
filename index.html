@@ -58,6 +58,16 @@
       <!-- Add more PDF links as needed -->
     </ul>
   </div>
+<script>
+    // Function to display current time as last updated time
+    function updateStatus() {
+        var currentDate = new Date();
+        var formattedDate = currentDate.toLocaleString(); // Format the date and time
+        document.getElementById("lastUpdated").textContent = formattedDate;
+    }
 
+    // Call the function to update status when page loads
+    updateStatus();
+</script>
 </body>
 </html>
