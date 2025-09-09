@@ -1,84 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teaching</title>
+  <title>Enseignement @ ULille</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f9fafc;
       margin: 0;
       padding: 0;
-      text-align: center;
-    }
-    .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    h1 {
       color: #333;
+      line-height: 1.6;
     }
+
+    header {
+      background: linear-gradient(135deg, #004085, #007BFF);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0.3rem 0;
+      font-size: 2rem;
+    }
+
+    header a {
+      color: #e2e6ea;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      color: #004085;
+      border-left: 4px solid #007BFF;
+      padding-left: 8px;
+    }
+
     .pdf-list {
       list-style-type: none;
       padding: 0;
+      margin: 1rem 0;
     }
+
     .pdf-list li {
-      margin: 10px 0;
-      padding: 10px;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: left;
+      margin: 0.6rem 0;
+      background: white;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .pdf-list li a {
+
+    .pdf-list li:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .pdf-list a {
       text-decoration: none;
       color: #007BFF;
+      font-weight: 500;
     }
-    .pdf-list li a:hover {
+
+    .pdf-list a:hover {
       text-decoration: underline;
     }
-    .upload-form {
-      margin-top: 20px;
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      margin: 2rem 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <a>sanyam.gupta@univ-lille.fr</a>
+  <header>
+    <a href="mailto:sanyam.gupta@univ-lille.fr">sanyam.gupta@univ-lille.fr</a>
     <h1>Enseignement @ ULille</h1>
     <p>L1-MI-S1</p>
+  </header>
 
+  <main class="container">
+    <h2>Exercices et TD</h2>
     <ul class="pdf-list">
-      <li> Exercices et solutions pour les TD </li>
-      <li><a href="ExoMathS1_2024_2025.pdf" target="_blank">Feuilles de TD</a></li>
+      <li><a href="ExoMathS1_2024_2025.pdf" target="_blank">Feuilles de TD (complet)</a></li>
       <li><a href="Semaine_1.pdf" target="_blank">Semaine 09/09 - 13/09</a></li>
       <li><a href="Semaine_2.pdf" target="_blank">Semaine 16/09 - 20/09</a></li>
       <li><a href="Semaine_3.pdf" target="_blank">Semaine 23/09 - 27/09</a></li>
-      
-      <!-- Add more PDF links as needed -->
+      <!-- Add more weeks as needed -->
     </ul>
+
+    <h2>Ressources externes</h2>
     <ul class="pdf-list">
-      <li><a href="https://perso.math.univ-toulouse.fr/tlabopin/files/2015/02/Borne.pdf">Borne Inférieure, borne supérieure</a></li>
-      <li><a href="https://melusine.eu.org/syracuse/immae/mpsi/mathematiques/analyse_reelle_complexe/02.pdf">Suites réelles</a></li>
-    
+      <li><a href="https://perso.math.univ-toulouse.fr/tlabopin/files/2015/02/Borne.pdf" target="_blank">Borne inférieure et borne supérieure</a></li>
+      <li><a href="https://melusine.eu.org/syracuse/immae/mpsi/mathematiques/analyse_reelle_complexe/02.pdf" target="_blank">Suites réelles</a></li>
     </ul>
 
-    <p>Notes des cours de Moodle</p>
-    <ul class="pdf-list"><li><a href="Chapter_1.pdf" target="_blank">Chapitre 1: Ensembles et Applications</a></li>
-      <li><a href="Chapter_2.pdf" target="_blank">Chapitre 2: Nombres et Suite Réels</a></li></ul>
-  </div>
-<script>
-    // Function to display current time as last updated time
-    function updateStatus() {
-        var currentDate = new Date();
-        var formattedDate = currentDate.toLocaleString(); // Format the date and time
-        document.getElementById("lastUpdated").textContent = formattedDate;
-    }
+    <h2>Notes de cours (Moodle)</h2>
+    <ul class="pdf-list">
+      <li><a href="Chapter_1.pdf" target="_blank">Chapitre 1 : Ensembles et Applications</a></li>
+      <li><a href="Chapter_2.pdf" target="_blank">Chapitre 2 : Nombres et Suites Réelles</a></li>
+    </ul>
+  </main>
 
-    // Call the function to update status when page loads
+  <footer>
+    Dernière mise à jour : <span id="lastUpdated"></span>
+  </footer>
+
+  <script>
+    function updateStatus() {
+      const currentDate = new Date();
+      const formattedDate = currentDate.toLocaleString("fr-FR");
+      document.getElementById("lastUpdated").textContent = formattedDate;
+    }
     updateStatus();
-</script>
+  </script>
 </body>
 </html>
