@@ -83,6 +83,34 @@
       color: #666;
       margin: 2rem 0;
     }
+    .pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 1rem 0;
+  list-style-type: none;
+}
+
+.pdf-grid li {
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.pdf-grid li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.pdf-grid a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 500;
+}
   </style>
 </head>
 <body>
@@ -106,16 +134,15 @@
 
       <!-- Add more weeks as needed -->
     </ul>
-
-    <h2>Ressources externes</h2>
-    <ul class="pdf-list">
-      <li><a href="main-2.pdf" target="_blank">Introduction à la logique</a></li>
-      <li><a href="recurrence.pdf" target="_blank">Recurrence</a></li>
-      <li><a href="Finite_Sets.pdf" target="_blank">Ensembles Finis</a></li>
-      <li><a href="contraposition.pdf" target="_blank">Contraposition</a></li>
-      <li><a href="https://perso.math.univ-toulouse.fr/tlabopin/files/2015/02/Borne.pdf" target="_blank">Borne inférieure et borne supérieure</a></li>
-      <li><a href="https://melusine.eu.org/syracuse/immae/mpsi/mathematiques/analyse_reelle_complexe/02.pdf" target="_blank">Suites réelles</a></li>
-    </ul>
+<h2>Ressources externes</h2>
+<ul class="pdf-grid">
+  <li><a href="main-2.pdf" target="_blank">Introduction à la logique</a></li>
+  <li><a href="recurrence.pdf" target="_blank">Récurrence</a></li>
+  <li><a href="Finite_Sets.pdf" target="_blank">Ensembles Finis</a></li>
+  <li><a href="contraposition.pdf" target="_blank">Contraposition</a></li>
+  <li><a href="https://perso.math.univ-toulouse.fr/tlabopin/files/2015/02/Borne.pdf" target="_blank">Bornes</a></li>
+  <li><a href="https://melusine.eu.org/syracuse/immae/mpsi/mathematiques/analyse_reelle_complexe/02.pdf" target="_blank">Suites réelles</a></li>
+</ul>
     
     <h2>Emploi du temps</h2>
     <ul class="pdf-list">
